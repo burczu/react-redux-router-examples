@@ -9,17 +9,26 @@ const Anchor = (props) => {
 
 // kontener
 class Container extends React.Component {
+  constructor(props) {
+    super(props);
+
+    // oczywiście trzeba zbindować, bo `this` będzie wskazywać na komponent Anchor
+    this.handleClick = this.handleClick.bind(this);
+  }
+
   // metoda obsługi zdarzeń mogą być tylko w kontenerze
-  onAnchorClick(event) {
+  handleClick(event) {
     event.preventDefault();
     console.log('hello from child!');
   }
 
   render() {
-    // tutaj bindujemy
-    return <Anchor onAnchorClick={this.onAnchorClick.bind(this)} />;
+    return <Anchor onAnchorClick={this.onAnchorClick} />;
   }
 }
 
 // użycie komponentu
-ReactDOM.render(<Component />, document.getElementById('root'));
+ReactDOM.render(
+  <Component />,
+  document.getElementById('root')
+);

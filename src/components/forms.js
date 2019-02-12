@@ -2,14 +2,16 @@ import React from 'react';
 
 // klasa komponentu
 class Component extends React.Component {
+  state = { text: '' };
+
   constructor(props) {
     super(props);
 
-    // stan początkowy definiuj w konstruktorze!
-    this.state = { text: '' };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleClear = this.handleClear.bind(this);
   }
 
-  onInputChange(event) {
+  handleChange(event) {
     // return false; nie działa!
     event.preventDefault();
 
@@ -19,9 +21,7 @@ class Component extends React.Component {
     this.setState({ text: newValue });
   }
 
-  onClearClicked(event) {
-    event.preventDefault();
-
+  handleClear() {
     // to spowoduje wyczyszczenie stanu i jednocześnie inputa (bo podpięty do value)
     this.setState({ text: '' });
   }
@@ -29,14 +29,16 @@ class Component extends React.Component {
   // obowiązkowa implementacja!
   render() {
     return (
-      <div>
-        <input type="text" onChange={this.onInputChange.bind(this)} value={this.state.text} />
-        <button onClick={this.onClearClicked.bind(this)}>Clear</button>
-      </div>
+      <form>
+        <input type="text" onChange={this.handleChange} value={this.state.text} />
+        <button onClick={this.handleClear}>Clear</button>
+      </form>
     );
-
   }
 }
 
 // użycie komponentu
-ReactDOM.render(<Component />, document.getElementById('root'));
+ReactDOM.render(
+  <Component />,
+  document.getElementById('root')
+);
