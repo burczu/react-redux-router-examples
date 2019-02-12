@@ -1,13 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 // klasa komponentu
 class Component extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { loaded: false };
-  }
+  state = { loaded: false };
 
   componentDidMount() {
     // stan zmieniaj zawsze za pomocą setState!!
@@ -24,4 +19,7 @@ class Component extends React.Component {
 }
 
 // użycie komponentu
-ReactDOM.render(<Component />, document.getElementById('root'));
+ReactDOM.render(
+  <Component />,
+  document.getElementById('root')
+);

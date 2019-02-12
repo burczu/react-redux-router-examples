@@ -6,7 +6,7 @@ class Component extends React.Component {
   // kontrola typu przekazanej wartości
   static propTypes = {
     text: PropTypes.string.isRequired
-  }
+  };
 
   // obowiązkowa implementacja!
   render() {
@@ -15,4 +15,7 @@ class Component extends React.Component {
 }
 
 // użycie komponentu
-ReactDOM.render(<Component text="Hello world!" />, document.getElementById('root'));
+ReactDOM.render(
+  <Component text="Hello world!" />,
+  document.getElementById('root')
+);

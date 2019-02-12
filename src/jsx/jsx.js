@@ -6,9 +6,9 @@ const paragraph = <p>Hello world!</p>;
 
 
 // zagnieżdżanie
-const box = ( // więcej linii? "owiń" w nawiasy!
+const box = ( // JSX na więcej linii? "owiń" w nawiasy!
   <div>
-    <p>Hello world!</div>
+    <p>Hello world!</p>
   </div>
 );
 
@@ -20,8 +20,12 @@ const injectedText = <p>{text}</p>; // nawiasy klamrowe
 const number = 10;
 const calc = <p>{number * 3}</p>;
 
+const element = <p>Hello!</p>;
+const injectedElement = <div>{element}</div>;
+
 
 // atrybuty - odpowiadają atrybutom HTML tylko, że camelCase
+const textWithAttribute = <button type="submit">Some text...</button>;
 const textWithClass1 = <p className="hello">Hello world!</p>; // "className" oraz "htmlFor" - przypadek szczególny
 
 const helloClass = 'hello';
@@ -30,7 +34,7 @@ const textWithClass2 = <p className={helloClass}>Hello world!</p>; // przypisani
 const textWithClass3 = <p className={number === 10 ? 'hello' : 'good-by'}>Hello world!</p>; // przypisanie wyrażenia
 
 const styleObject = { color: 'red', fontWeight: 'bold' };
-const inlineStyle = <p style={styleObject}>Hello world!</p> // przyisanie obiektu
+const inlineStyle = <p style={styleObject}>Hello world!</p>; // przyisanie obiektu
 
 
 // wyświetlanie warunkowe

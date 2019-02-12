@@ -1,13 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 // klasa komponentu
 class Component extends React.Component {
-  constructor(props) {
-    super(props); // dobra praktyka (umożliwia dostęp przez "this.props" w konstruktorze)
+  // definicja stanu początkowego
+  state = { text: '' };
 
-    // stan początkowy definiuj w konstruktorze!
-    this.state = { text: '' };
+  constructor(props) {
+    // dobra praktyka (umożliwia dostęp przez "this.props" w konstruktorze)
+    super(props);
+
+    // stan początkowy można tez definiować w konstruktorze!
+    // this.state = { text: '' };
   }
 
   // metoda cyklu życia komponentu
@@ -23,4 +26,7 @@ class Component extends React.Component {
 }
 
 // użycie komponentu
-ReactDOM.render(<Component />, document.getElementById('root'));
+ReactDOM.render(
+  <Component />,
+  document.getElementById('root')
+);
