@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 // import pliku CSS
 import '../styles/styles.css';
@@ -25,4 +24,7 @@ class Component extends React.Component {
 }
 
 // użycie komponentu
-ReactDOM.render(<Component />, document.getElementById('root'));
+ReactDOM.render(
+  <Component />,
+  document.getElementById('root')
+);
