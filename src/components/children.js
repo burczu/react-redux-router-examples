@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 const Component = (props) => {
   return (
@@ -8,11 +9,16 @@ const Component = (props) => {
   );
 };
 
-const Parent = () => {
+const App = () => {
   // to co jest wewnątrz Component będzie wyrenderowane w miejsce "props.children"!
   return (
     <Component>
       <p>Children!!</p>
     </Component>
   );
-}
+};
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);

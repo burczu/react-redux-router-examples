@@ -6,6 +6,8 @@ import App from './App';
 import { createStore } from 'redux';
 import { reducer } from './reducers/reducer';
 
+import { setData } from './actions/actions';
+
 // komponent udostępniający "store" komponentom aplikacji
 import { Provider } from 'react-redux';
 
@@ -14,7 +16,7 @@ const store = createStore(reducer);
 
 // store umożliwia przyjmowanie akcji za pomocą metody dispatch:
 store.dispatch({ type: 'TEST_ACTION' }); // czysta akcja
-store.dispatch(testAction()); // kreator akcji
+store.dispatch(setData({ text: 'test data' })); // kreator akcji
 
 // "owiń" główny komponent aplikacji komponentem Provider i przekaż mu store:
 ReactDOM.render(

@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch';
+import axios from 'axios';
 
 export const GET_DATA_START = 'GET_DATA_START';
 export const GET_DATA_SUCCESS = 'GET_DATA_SUCCESS';
@@ -10,10 +10,11 @@ export function getData() {
     // pobieranie danych rozpoczęte (ustaw stan, na przykład isLoading = true)
     dispatch({ type: GET_DATA_START });
 
-    fetch('https:/api.text.com/data')
-      .then(response => response.json())
+    axios.get('https:/api.text.com/data')
       // pobieranie zakończone sukcesem (zmień odpowiednio stan)
-      .then(data => dispatch({ type: GET_DATA_SUCCESS, payload: { data } }));
+      .then(response => {
+        dispatch({ type: GET_DATA_SUCCESS, payload: { data: response.data } })
+      })
       // dla błędu też jest przewidziana akcja
       .catch(error => dispatch({ type: GET_DATA_ERROR, payload: { error } }))
   };

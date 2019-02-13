@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../actions';
+import * as actions from '../actions/actions';
 
 class Container extends React.Component {
   onSetDataClick() {
@@ -22,18 +22,22 @@ class Container extends React.Component {
 // mapuje stan Reduxa do "props"
 const mapStateToProps = (state) => {
   return {
-    // zwróć cały stan (można też zrobić "cherry picking")
-    ...state.first
+    // można zwrócić cały stan
+    ...state,
+
+    // albo cherry picking
+    // data: state.data,
   };
-}
+};
 
 // mapuje wywołania "dispatch(akcja)" do props
 const mapDispatchToProps = (dispatch) => {
   return {
-    // zwraca funkcję set data, która "dispatchuje" kreator akcji "setData"
-    setData: (data) => dispatch(actions.setData(data))
+    // zwraca funkcję setData, która "dispatchuje" kreator akcji "setData"
+    setData: (data) => dispatch(actions.setData(data)),
   };
-}
+};
 
 // connect łączy "store" Reduxa z komponentem
+// jest to HOC, więc po prostu wzbogaca komponent
 export default connect(mapStateToProps, mapDispatchToProps)(Container);
