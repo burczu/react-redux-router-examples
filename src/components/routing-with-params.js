@@ -16,11 +16,11 @@ const App = () => {
       </div>
     </Router>
   );
-}
+};
 
 const Home = () => {
   return <h1>Home!!</h1>;
-}
+};
 
 const Items = (props) => {
   const ids = [1, 2, 3, 4];
@@ -28,7 +28,8 @@ const Items = (props) => {
   const currentItem = parseInt(props.match.params.itemId, 10);
 
   if (ids.indexOf(currentItem) === -1) {
-    <Redirect to="/" />
+    // sposób na przekierowanie
+    return <Redirect to="/" />;
   }
 
   return (
@@ -37,7 +38,6 @@ const Items = (props) => {
       <p>Item id = {currentItem}</p>
     </div>
   );
-}
-}
+};
 
 ReactDOM.render(<App />, document.getElementById('root'));

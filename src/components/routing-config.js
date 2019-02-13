@@ -16,11 +16,11 @@ const App = () => {
       </div>
     </Router>
   );
-}
+};
 
 const Home = () => {
   return <h1>Home!!</h1>;
-}
+};
 
 // komponent z zagnieżdżonym route!
 const About = () => {
@@ -31,10 +31,10 @@ const About = () => {
         <Route path="/about/nested" component={Nested} />
       </div>
   );
-}
+};
 
 const Nested = () => {
   return <h1>Nested!!</h1>;
-}
+};
 
 ReactDOM.render(<App />, document.getElementById('root'));

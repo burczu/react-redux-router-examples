@@ -12,6 +12,8 @@ const App = () => {
   return (
     <Router>
       <div>
+        // poza routingiem, w tym komponencie mogą znajdować się też inne komponenty
+        // one będą pojawiać się na ekranie niezależnie od aktualnej ścieżki
         <NavLink exact to="/" activeClassName="active">Home</NavLink>
 
         <Route exact path="/" component={Home} />
@@ -19,11 +21,11 @@ const App = () => {
       </div>
     </Router>
   );
-}
+};
 
 const Home = () => {
   return <h1>Home!!</h1>;
-}
+};
 
 const Items = (props) => {
   return (
@@ -32,7 +34,6 @@ const Items = (props) => {
       <p>Item id = {props.match.params.itemId}</p>
     </div>
   );
-}
-}
+};
 
 ReactDOM.render(<App />, document.getElementById('root'));
