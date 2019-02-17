@@ -20,12 +20,15 @@ const withClassContainer = (Component) => {
   return class Container extends React.Component {
     state = { text: '' };
 
+    eventHandler = () => {};
+
     render() {
       // rozszerzenie "propsów" o stan komponentu Container
       // tutaj można przekazać też referencje do metod klasy Container...
       const newProps = {
         ...this.props,
         ...this.state,
+        this.eventHandler,
       };
 
       return (

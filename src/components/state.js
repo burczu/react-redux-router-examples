@@ -3,7 +3,7 @@ import React from 'react';
 // klasa komponentu
 class Component extends React.Component {
   // definicja stanu początkowego
-  state = { text: '' };
+  state = { text: '', test: ''};
 
   constructor(props) {
     // dobra praktyka (umożliwia dostęp przez "this.props" w konstruktorze)

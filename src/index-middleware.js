@@ -17,8 +17,6 @@ ReactDOM.render(
   </Provider>
   , document.getElementById('root'));
 
-
-
 // przykład kreatora akcji
 const changeData = () => {
   return (dispatch, getState) => {

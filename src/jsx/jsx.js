@@ -25,13 +25,15 @@ const injectedElement = <div>{element}</div>;
 
 
 // atrybuty - odpowiadają atrybutom HTML tylko, że camelCase
-const textWithAttribute = <button type="submit">Some text...</button>;
-const textWithClass1 = <p className="hello">Hello world!</p>; // "className" oraz "htmlFor" - przypadek szczególny
+const textWithAttribute = <button type="submit" onClick={}>Some text...</button>;
+// "className" oraz "htmlFor" - przypadek szczególny
+const textWithClass1 = <p className="hello">Hello world!</p>;
 
 const helloClass = 'hello';
 const textWithClass2 = <p className={helloClass}>Hello world!</p>; // przypisanie zmiennej
 
-const textWithClass3 = <p className={number === 10 ? 'hello' : 'good-by'}>Hello world!</p>; // przypisanie wyrażenia
+// przypisanie wyrażenia
+const textWithClass3 = <p className={number === 10 ? 'hello' : 'good-by'}>Hello world!</p>;
 
 const styleObject = { color: 'red', fontWeight: 'bold' };
 const inlineStyle = <p style={styleObject}>Hello world!</p>; // przyisanie obiektu
@@ -46,7 +48,8 @@ if (number === 10) {
 }
 
 const box2 = <div>{conditional}</div>;
-const box3 = <div>{number === 10 ? <p>Hello world</p> : null}</div>; // ten sam efekt
+// ten sam efekt
+const box3 = <div>{number === 10 ? <p>Hello world</p> : null}</div>;
 
 
 // wyświetlanie elementów tablicy

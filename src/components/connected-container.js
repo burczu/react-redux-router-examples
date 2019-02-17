@@ -23,10 +23,10 @@ class Container extends React.Component {
 const mapStateToProps = (state) => {
   return {
     // można zwrócić cały stan
-    ...state,
+    // ...state,
 
     // albo cherry picking
-    // data: state.data,
+    data: state.firstState.data,
   };
 };
 

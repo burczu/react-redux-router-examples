@@ -19,7 +19,14 @@ const App = () => {
         // lub dodać jakiś warunek i w zależności od niego renderować
         // różne komponenty
         // ważne aby pamiętać o ręcznym przekazaniu "propsów"
-        <Route path="/about" render={(props) => <About {...props} />} />
+        <Route path="/about" render={(props) => {
+          const costam = true;
+          if (costam) {
+            return <About {...props} costam={costam} />;
+          }
+
+          return null;
+        }} />
 
         // children - podobne do render, z tą różnicą, że funkcja wywoływana jest
         // niezależnie czy "path" pasuje do aktualnej ścieżki czy nie

@@ -12,7 +12,7 @@ import { setData } from './actions/actions';
 import { Provider } from 'react-redux';
 
 // tworzenie store: wywołaj funkcję createStore i przekaż jej reducer(y)
-const store = createStore(reducer);
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 // store umożliwia przyjmowanie akcji za pomocą metody dispatch:
 store.dispatch({ type: 'TEST_ACTION' }); // czysta akcja

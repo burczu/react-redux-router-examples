@@ -14,7 +14,7 @@ const App = () => {
       <div>
         // poza routingiem, w tym komponencie mogą znajdować się też inne komponenty
         // one będą pojawiać się na ekranie niezależnie od aktualnej ścieżki
-        <NavLink exact to="/" activeClassName="active">Home</NavLink>
+        <NavLink exact to="/" activeStyle={{}} activeClassName="active">Home</NavLink>
 
         <Route exact path="/" component={Home} />
         <Route path="/items/:itemId" component={Items} />

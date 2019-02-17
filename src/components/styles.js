@@ -1,7 +1,7 @@
 import React from 'react';
 
 // import pliku CSS
-import '../styles/styles.css';
+import styles from '../styles/styles.css';
 
 // klasa komponentu
 class Component extends React.Component {
