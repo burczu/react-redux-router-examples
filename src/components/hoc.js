@@ -28,7 +28,7 @@ const withClassContainer = (Component) => {
       const newProps = {
         ...this.props,
         ...this.state,
-        this.eventHandler,
+        eventHandler: this.eventHandler,
       };
 
       return (

@@ -14,14 +14,16 @@ Renderer.propTypes = {
 // ten komponent wie tylko jak cos wyswietlic...
 const App = () => {
   return (
-    <Test>
-      <p>text</p>
-    </Test>
-    <Renderer render={textToRender => <p style{{ color: 'blue' }}>{textToRender}</p>} />
+    <>
+      <Test>
+        <p>text</p>
+      </Test>
+      <Renderer render={textToRender => <p style{{ color: 'blue' }}>{textToRender}</p>} />
+    </>
   );
 };
 
-cosnt Test = (props) => <div>{props.children}</div>
+const Test = (props) => <div>{props.children}</div>
 
 // użycie komponentu
 ReactDOM.render(
